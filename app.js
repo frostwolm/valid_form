@@ -42,10 +42,38 @@ const FORM_HTML = `<form action="" method="post" id="form-opros">
         </div>
         <button type="submit">Submit!</button>
     </form>`;
+    const NOT_VALID_CSS_CLASS = 'form__input--notvalid';
 
 function initform(evt) {
     const containerElement = document.getElementById(CONTAINER_ID);
     containerElement.insertAdjacentHTML('afterbegin', FORM_HTML);
+    const formElement = containerElement.firstChild;
+    formElement.addEventListener('submit', onSubmitForm);
+}
+
+function onSubmitForm(evt) {
+    evt.preventDefault();
+    let isPrepared = true;
+    const lstFields = evt.currentTarget.getElementsByClassName('radio-container');
+    lstFields.forEach((field) => {
+        let lstInputs = field.getElementsByTagName('input');
+        for (let i = 0; i < lstInputs.length; i++) {
+            const input = lstInputs[i];
+            let isValid = false;
+            if (input.getAttribute('type') === 'radio') {
+                isValid = input.checked;
+            }
+            if (!isValid) {
+                if (filed.classList.contain(NOT_VALID_CSS_CLASS)) {
+                    field.classList.add(NOT_VALID_CSS_CLASS);
+                }
+            }
+            isPrepared = isPrepared && isValid;
+        }
+    });
+    if (isPrepared) {
+        evt.currentTarget.submit();
+    }  
 }
 
 document.addEventListener('DOMContentLoaded', initform);
