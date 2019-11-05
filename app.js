@@ -40,10 +40,12 @@ const FORM_HTML = `<form action="" method="post" id="form-opros">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-10" id="" value="m"><input type="radio" name="sex-radio-10" id="" value="f"></div>
         </div>
+        <button type="submit">Submit!</button>
     </form>`;
 
 function initform(evt) {
     const containerElement = document.getElementById(CONTAINER_ID);
+    containerElement.insertAdjacentHTML('afterbegin', FORM_HTML);
 }
 
 document.addEventListener('DOMContentLoaded', initform);
