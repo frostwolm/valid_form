@@ -93,7 +93,11 @@ class FormValid{
                 }
             }
 
-            isInputValid = !(isHasTextValue ^ isRadioChecked);
+            if (isHasTextValue) {
+                isInputValid = isRadioChecked;    
+            }else{
+                isInputValid = true;
+            }
             
             isFormValid = isFormValid && isInputValid;
             
