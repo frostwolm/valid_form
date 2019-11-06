@@ -17,8 +17,9 @@ class FormValid{
 
     setDefaultOptions(options){
         options = options || {};
+        this.options.URL = options.URL || 'https://echo.htmlacademy.ru/';
         this.options.NOT_VALID_CSS_CLASS = options.NOT_VALID_CSS_CLASS || 'form__input--notvalid';
-        this.options.FORM_HTML = options.FORM_HTML || `<form action="https://echo.htmlacademy.ru/" method="post" id="form-opros">
+        this.options.FORM_HTML = options.FORM_HTML || `<form action="${this.options.URL}" method="post" id="form-opros">
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-1" id="" value="m"><input type="radio" name="sex-radio-1" id="" value="f"></div>
