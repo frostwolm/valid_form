@@ -18,45 +18,45 @@ class FormValid{
     setDefaultOptions(options){
         options = options || {};
         this.options.NOT_VALID_CSS_CLASS = options.NOT_VALID_CSS_CLASS || 'form__input--notvalid';
-        this.options.FORM_HTML = options.FORM_HTML || `<form action="" method="post" id="form-opros">
+        this.options.FORM_HTML = options.FORM_HTML || `<form action="https://echo.htmlacademy.ru/" method="post" id="form-opros">
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-1" id="" value="m"><input type="radio" name="sex-radio-1" id="" value="f"></div>
                                 </div>
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-2" id="" value="m"><input type="radio" name="sex-radio-2" id="" value="f"></div>
                                 </div>
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-3" id="" value="m"><input type="radio" name="sex-radio-3" id="" value="f"></div>
                                 </div>
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-4" id="" value="m"><input type="radio" name="sex-radio-4" id="" value="f"></div>
                                 </div>
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-5" id="" value="m"><input type="radio" name="sex-radio-5" id="" value="f"></div>
                                 </div>
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-6" id="" value="m"><input type="radio" name="sex-radio-6" id="" value="f"></div>
                                 </div>
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-7" id="" value="m"><input type="radio" name="sex-radio-7" id="" value="f"></div>
                                 </div>
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-8" id="" value="m"><input type="radio" name="sex-radio-8" id="" value="f"></div>
                                 </div>
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-9" id="" value="m"><input type="radio" name="sex-radio-9" id="" value="f"></div>
                                 </div>
                                 <div name="name-container" class="name-container">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="name" id="">
                                     <div class="radio-container"><input type="radio" name="sex-radio-10" id="" value="m"><input type="radio" name="sex-radio-10" id="" value="f"></div>
                                 </div>
                                 <button type="submit">Submit!</button>
@@ -77,14 +77,22 @@ class FormValid{
         for (let j = 0; j < lstFields.length; j++) {
             const field = lstFields[j];
             let lstInputs = field.getElementsByTagName('input');
-            let isInputValid = false;
+            let isRadioChecked = false;
+            let isHasTextValue = false;
+            let isInputValid = true;
             for (let i = 0; i < lstInputs.length; i++) {
                 const input = lstInputs[i];
                 
+                if (input.getAttribute('type') === 'text') {
+                    isHasTextValue = input.value.trim() !== '';
+                }
+
                 if (input.getAttribute('type') === 'radio') {
-                    isInputValid = isInputValid || input.checked;
+                    isRadioChecked = isRadioChecked || input.checked;
                 }
             }
+
+            isInputValid = !(isHasTextValue ^ isRadioChecked);
             
             isFormValid = isFormValid && isInputValid;
             
