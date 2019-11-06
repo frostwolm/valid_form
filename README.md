@@ -13,7 +13,8 @@
 - FORM_HTML - строка с HTML разметкой формы
 
 ## Пример использования
-Форма внутри элемента с id "container_id" c раметкой по умолчанию, URL - "test.ru", имя класс - "not_valid".
+Форма внутри элемента с id "container_id" c раметкой по умолчанию, URL - "test.ru", имя класс - "not_valid".  
+
 `
 const formValid = new FormValid('container_id', {
     URL: "test.ru",
