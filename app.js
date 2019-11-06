@@ -1,42 +1,42 @@
 const CONTAINER_ID = 'test';
 const FORM_HTML = `<form action="" method="post" id="form-opros">
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-1" id="" value="m"><input type="radio" name="sex-radio-1" id="" value="f"></div>
         </div>
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-2" id="" value="m"><input type="radio" name="sex-radio-2" id="" value="f"></div>
         </div>
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-3" id="" value="m"><input type="radio" name="sex-radio-3" id="" value="f"></div>
         </div>
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-4" id="" value="m"><input type="radio" name="sex-radio-4" id="" value="f"></div>
         </div>
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-5" id="" value="m"><input type="radio" name="sex-radio-5" id="" value="f"></div>
         </div>
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-6" id="" value="m"><input type="radio" name="sex-radio-6" id="" value="f"></div>
         </div>
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-7" id="" value="m"><input type="radio" name="sex-radio-7" id="" value="f"></div>
         </div>
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-8" id="" value="m"><input type="radio" name="sex-radio-8" id="" value="f"></div>
         </div>
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-9" id="" value="m"><input type="radio" name="sex-radio-9" id="" value="f"></div>
         </div>
-        <div name="name-container">
+        <div name="name-container" class="name-container">
             <input type="text" name="" id="">
             <div class="radio-container"><input type="radio" name="sex-radio-10" id="" value="m"><input type="radio" name="sex-radio-10" id="" value="f"></div>
         </div>
@@ -54,23 +54,30 @@ function initform(evt) {
 function onSubmitForm(evt) {
     evt.preventDefault();
     let isPrepared = true;
-    const lstFields = evt.currentTarget.getElementsByClassName('radio-container');
-    lstFields.forEach((field) => {
+    const lstFields = evt.currentTarget.getElementsByClassName('name-container');
+    for (let j = 0; j < lstFields.length; j++) {
+        const field = lstFields[j];
         let lstInputs = field.getElementsByTagName('input');
         for (let i = 0; i < lstInputs.length; i++) {
             const input = lstInputs[i];
-            let isValid = false;
+            let isValid = true;
             if (input.getAttribute('type') === 'radio') {
                 isValid = input.checked;
             }
             if (!isValid) {
-                if (filed.classList.contain(NOT_VALID_CSS_CLASS)) {
+                if (!field.classList.contains(NOT_VALID_CSS_CLASS)) {
                     field.classList.add(NOT_VALID_CSS_CLASS);
                 }
+            }else{
+                if (field.classList.contains(NOT_VALID_CSS_CLASS)) {
+                    field.classList.remove(NOT_VALID_CSS_CLASS);
+                    break;
+                }  
             }
             isPrepared = isPrepared && isValid;
         }
-    });
+    }
+
     if (isPrepared) {
         evt.currentTarget.submit();
     }  
