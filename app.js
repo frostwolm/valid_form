@@ -22,43 +22,43 @@ class FormValid{
         this.options.FORM_HTML = options.FORM_HTML || `<form action="${this.options.URL}" method="post" id="form-opros">
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-1" id="" value="m"><input type="radio" name="sex-radio-1" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-1" id="" value="m"></label><label>woman<input type="radio" name="sex-radio-1" id="" value="f"></label></div>
                                 </div>
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-2" id="" value="m"><input type="radio" name="sex-radio-2" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-2" id="" value="m"></label><label>woman<input type="radio" name="sex-radio-2" id="" value="f"></label></div>
                                 </div>
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-3" id="" value="m"><input type="radio" name="sex-radio-3" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-3" id="" value="m"></label><label>woman<input type="radio" name="sex-radio-3" id="" value="f"></label></div>
                                 </div>
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-4" id="" value="m"><input type="radio" name="sex-radio-4" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-4" id="" value="m"></label><label>woman<input type="radio" name="sex-radio-4" id="" value="f"></label></div>
                                 </div>
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-5" id="" value="m"><input type="radio" name="sex-radio-5" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-5" id="" value="m"></label><label>woman<input type="radio" name="sex-radio-5" id="" value="f"></label></div>
                                 </div>
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-6" id="" value="m"><input type="radio" name="sex-radio-6" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-6" id="" value="m"></label><label>woman<input type="radio" name="sex-radio-6" id="" value="f"></label></div>
                                 </div>
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-7" id="" value="m"><input type="radio" name="sex-radio-7" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-7" id="" value="m"></label><label>woman<input type="radio" name="sex-radio-7" id="" value="f"></label></div>
                                 </div>
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-8" id="" value="m"><input type="radio" name="sex-radio-8" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-8" id="" value="m"></label><label>woman<input type="radio" name="sex-radio-8" id="" value="f"></label></div>
                                 </div>
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-9" id="" value="m"><input type="radio" name="sex-radio-9" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-9" id="" value="m"></label><label>woman<input type="radio" name="sex-radio-9" id="" value="f"></label></div>
                                 </div>
                                 <div name="name-container" class="name-container">
                                     <input type="text" name="name" id="">
-                                    <div class="radio-container"><input type="radio" name="sex-radio-10" id="" value="m"><input type="radio" name="sex-radio-10" id="" value="f"></div>
+                                    <div class="radio-container"><label>man<input type="radio" name="sex-radio-10" id="" value="m"</label><label>woman><input type="radio" name="sex-radio-10" id="" value="f</label>"></div>
                                 </div>
                                 <button type="submit">Submit!</button>
                             </form>`;
